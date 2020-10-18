@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "learn-ngstore"
+    }
+  },
+  "defaultProject": "learn-ngstore",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
