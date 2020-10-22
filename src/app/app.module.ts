@@ -8,6 +8,7 @@ import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import {CustomerModule} from './customer/customer.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {CustomerModule} from './customer/customer.module';
     AppRoutingModule,
     CustomerModule,
     StoreModule.forRoot(reducers, { metaReducers }),
-    !environment.production ? StoreDevtoolsModule.instrument() : []
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
