@@ -1,18 +1,20 @@
-<h4>Add New Customer</h4>
-
-<input #box >
-
-<button (click)="addCustomer(box.value)">Add</button>
-
-
-<h4>List of Customers</h4>
-
-<div *ngFor="let customer of customers$ | async; let i=index">
-
-  <span >{{i+1}}.</span> {{customer.name}}
-
+<div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="20px">
+	<div>
+		<h4>Add New Customer</h4>
+		<input #box >
+		<button (click)="addCustomer(box.value)">Add</button>
+		<h4>List of Customers</h4>
+		<div *ngFor="let customer of customers$ | async; let i=index">
+			<span >{{i+1}}.</span> {{customer.name}}
+		</div>
+	</div>
+<div fxLayout="row" fxLayoutAlign="space-around">
+	<button mat-button color="accent" (click)="showSnackInfo()"> Show Snack Info</button>
+	<button mat-button color="accent" (click)="showSnackError()"> Show Snack Error</button>
+	<button mat-button color="accent" (click)="showSnackSuccess()"> Show Snack Success</button>
+</div>
+<div  fxLayout="row" fxLayoutAlign="space-around">
+<app-sample-table [myCustomData]="myCustomData"></app-sample-table>
 </div>
 
-<button mat-button color="accent" (click)="showSnackInfo()"> Show Snack Info</button>
-<button mat-button color="accent" (click)="showSnackError()"> Show Snack Error</button>
-<button mat-button color="accent" (click)="showSnackSuccess()"> Show Snack Success</button>
+</div>
